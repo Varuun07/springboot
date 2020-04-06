@@ -23,6 +23,6 @@ public class DemoApplicationTests {
 	@Test
 	public void homeResponse() {
 		String body = this.restTemplate.getForObject("/", String.class);
-		assertThat(body).isEqualTo("Spring is here!");
+		assertThat(body).isEqualTo("<style type='text/css' media='screen'>body { background-color: purple; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: orange; font-size: 250%; }</style><body>Spring is here!</body>");
 	}
 }
