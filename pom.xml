@@ -94,7 +94,7 @@
            </executions>
            <configuration>
               <serverId>nexus</serverId>
-              <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+              <nexusUrl>http://192.168.33.11:8081/repository/java-project/</nexusUrl>
               <skipStaging>true</skipStaging>
            </configuration>
         </plugin>
