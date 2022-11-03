@@ -2,7 +2,7 @@ pipeline {
     
     agent{
         
-        label 'master'
+        label 'agent1'
     }
 
     tools { 
@@ -34,7 +34,7 @@ pipeline {
              sh 'mvn clean package'
             
                 }
-	        }
+	        } 
          
 
     stage('Upload Artifacts To Nexus'){
@@ -58,22 +58,19 @@ pipeline {
             }
         }
         
-    /*    stage('Deploy To Tomcat') {
+          stage('Deploy To Tomcat') {
             
-          steps{
+            steps{
             
-            script {
+                script {
                 
-              deploy adapters: [tomcat9(credentialsId: 'tomcat', 
-              path: '', 
-              url: 'http://192.168.33.11:8080/')], 
-              contextPath: '/pipeline',
-              war: 'target/*.war'
-            } 
-                 
-          }
-       }    */
-            
-    }
-    
+                   deploy adapters: [tomcat9(credentialsId: 'tomcat',
+                   path: '',
+                   url: 'http://192.168.33.11:8080/')],
+                   contextPath: 'springboot-java-open',
+                   war: '**/*.war'
+               }
+            }
+        }
+     }
   }
