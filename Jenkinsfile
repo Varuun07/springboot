@@ -22,7 +22,7 @@ pipeline {
 
                  script {
                      
-                     git 'https://github.com/Varuun07/springboot-java-open';
+                     git 'https://github.com/Varuun07/springboot-java-open.git';
 				 }
 			 }
            }
@@ -56,7 +56,7 @@ pipeline {
                 repository: 'java-project', 
                 version: '0.0.1-SNAPSHOT'
             }
-        }
+        } 
         
           stage('Deploy To Tomcat') {
             
@@ -66,8 +66,9 @@ pipeline {
                 
                    deploy adapters: [tomcat9(credentialsId: 'tomcat',
                    path: '',
-                   url: 'http://192.168.33.11:8080/')],
+                   url: 'http://192.168.33.11:8082/')],
                    contextPath: 'springboot-java-open',
+                   onFailure: false,
                    war: '**/*.war'
                }
             }
