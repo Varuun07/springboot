@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
  
       - name: Set up Maven
-        uses: actions/setup-maven@v2
+        uses: github/linguist@v2
         with:
           java-version: '11'
  
