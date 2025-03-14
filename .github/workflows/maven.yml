@@ -17,5 +17,5 @@ jobs:
         with:
           java-version: '11'
  
-      - name: Build and package
+      - name: Build
         run: mvn clean package
